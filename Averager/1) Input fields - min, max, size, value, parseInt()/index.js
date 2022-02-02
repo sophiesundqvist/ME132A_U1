@@ -1,5 +1,6 @@
 "use strict";
 
+
 /*
 
 ACCESSING DATA IN AN INPUT FIELD
@@ -43,6 +44,9 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 //      document.querySelector("#input_test_1").value
 //      Log to the console the current value of #input_test_1. It should
 //      be 13, if you managed the previous E correctly.
+let inputvalue = document.querySelector("#input_test_1").value;
+console.log(inputvalue)
+
 
 
 // E7:  Add a button <button> to the HTML-file.
@@ -53,6 +57,18 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 //      the browser logs the current value of the input field on the console.
 //      Test this by manually changing the value of the input field. That is,
 //      by going to the webpage and changing that value.
+
+
+
+let button_test = document.querySelector("#button_test_1")
+
+
+button_test.addEventListener("click", function(){
+    let value = document.querySelector("#input_test_1").value;
+    console.log(value)
+    f1()
+}); 
+
 
 
 // E9:  NOTE that the value from the input field is a string, even if the input
@@ -68,11 +84,21 @@ https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number
 //      What will be logged in the lines below?
 let a = "23";
 // console.log( parseInt( a ) + 1 );
+// svar 24
 // console.log( a + 1 );
+// svar 231
 
 
 // E11: Code a function (F1) that adds 23 to the number in the input field and
 //      logs the result to the console.
+
+function f1(){
+    let x = document.querySelector("#input_test_1").value;
+    console.log( parseInt(x) + parseInt(a) )
+
+}
+
+
 
 
 // E12: Now make sure that F1 is called when the user clicks on #button_test_1
