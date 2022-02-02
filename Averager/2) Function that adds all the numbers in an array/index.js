@@ -13,8 +13,8 @@ adder_three([2, 1, -2]) should return 1
 
 */
 
-let a1 = [1, 2, 3];
-console.log( adder_three( a1 ) ); // this logs 6 since 1 + 2 + 3 is 6
+let a1 = [5,2,1,7];
+// console.log( adder_three( a1 ) ); // this logs 6 since 1 + 2 + 3 is 6
 
 function adder_three ( _array ) {
   let sum = 0;
@@ -25,6 +25,15 @@ function adder_three ( _array ) {
 }
 
 
+function adder (_arr) {
+  let summ = 0;
+  for (let i = 0 ; i < _arr.length ; i++){
+    summ = summ + _arr[i];
+  }
+  return summ;
+}
+
+console.log( adder(a1) )
 /*
 
 The problem with adder_three is that it only works if the argument is an array of 3 elements.
