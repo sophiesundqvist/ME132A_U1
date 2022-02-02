@@ -13,7 +13,17 @@ function testConsole (p1) {
   document.querySelector("body").style.backgroundColor = p1;
 }
 
+let gridContainer = document.querySelector("#gridContainer")
 
+for (let i = 0; i < 25; i++){
+  let gridItem = document.createElement("div");
+  gridContainer.appendChild(gridItem);
+  gridItem.innerHTML = f25(100)
+}
+
+function f25 (max) {
+  return Math.floor(max * Math.random())
+}
 /*
 
 Exercise
