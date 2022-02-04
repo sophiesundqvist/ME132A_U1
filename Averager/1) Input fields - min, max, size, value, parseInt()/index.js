@@ -63,11 +63,11 @@ console.log(inputvalue)
 let button_test = document.querySelector("#button_test_1")
 
 
-button_test.addEventListener("click", function(){
-    let value = document.querySelector("#input_test_1").value;
-    console.log(value)
-    f1()
-}); 
+// button_test.addEventListener("click", function(){
+//     let value = document.querySelector("#input_test_1").value;
+//     console.log(value)
+//     f1()
+// }); 
 
 
 
@@ -93,12 +93,17 @@ let a = "23";
 //      logs the result to the console.
 
 function f1(){
-    let x = document.querySelector("#input_test_1").value;
-    console.log( parseInt(x) + parseInt(a) )
+    let temp = document.querySelector("#input_test_1").value;
+    temp = parseInt(temp);
+    console.log(temp + 23)
 
 }
 
 
+
+button_test.addEventListener("click", function(){
+    f1()
+})
 
 
 // E12: Now make sure that F1 is called when the user clicks on #button_test_1

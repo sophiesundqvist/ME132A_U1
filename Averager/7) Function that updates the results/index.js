@@ -43,12 +43,6 @@ The function getArrayOfSelectedNumbers does the following:
 
 
 
-
-
-let valueColumn = document.querySelector("#inputCols").value;
-let valueRow = document.querySelector ("#inputRows").value;
-
-
 function gridMaker(gridContainer, C, R){
   
   gridContainer.style.display = "grid";
@@ -87,7 +81,7 @@ function createNumberDiv (){
 
 
 document.querySelector("button").addEventListener("click", function(){
-  gridMaker(document.querySelector("#grid"), valueColumn, valueRow) 
+  gridMaker(document.querySelector("#grid"), document.querySelector("#inputCols").value, document.querySelector ("#inputRows").value) 
 })
 
 
