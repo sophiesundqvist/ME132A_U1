@@ -8,22 +8,30 @@ You can for instance call a function that you have defined
 in your JS-file from the console. Check the video.
 
 */
-
 function testConsole (p1) {
   document.querySelector("body").style.backgroundColor = p1;
 }
 
-let gridContainer = document.querySelector("#gridContainer")
 
-for (let i = 0; i < 25; i++){
-  let gridItem = document.createElement("div");
-  gridContainer.appendChild(gridItem);
-  gridItem.innerHTML = f25(100)
+function f25 (container) {
+  for (let i = 0; i < 25; i++){
+    let gridItem = document.createElement("div");
+    container.appendChild(gridItem);
+    gridItem.innerHTML = randomNumber(100)
+  }
 }
-
-function f25 (max) {
+  
+function randomNumber(max){
   return Math.floor(max * Math.random())
 }
+
+
+
+console.log(f25(document.querySelector("#gridContainer")))
+
+
+
+
 /*
 
 Exercise

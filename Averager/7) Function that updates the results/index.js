@@ -41,6 +41,63 @@ The function getArrayOfSelectedNumbers does the following:
   NOTE that you need to set the argument className when you make the function call
 */
 
+
+
+
+
+let valueColumn = document.querySelector("#inputCols").value;
+let valueRow = document.querySelector ("#inputRows").value;
+
+
+function gridMaker(gridContainer, C, R){
+  
+  gridContainer.style.display = "grid";
+  gridContainer.style["grid-template-columns"] = `repeat(${C}, 1fr`;
+  gridContainer.style["grid-template-rows"] = `repeat(${R}, 1fr`;
+  
+  gridContainer.innerHTML = ""
+
+  document.querySelector("#selected span").innerHTML = ""; 
+  document.querySelector("#amount span").innerHTML = 0;
+  document.querySelector("#sum span").innerHTML = 0;
+  document.querySelector("#average span").innerHTML = 0;
+  
+  for(let i = 0; i < C * R; i++){
+    gridContainer.appendChild(createNumberDiv())
+    
+  }
+};
+
+// I Loopen kallar jag på nedan function. ger den ett nytt namn och placerar den under gridcontainer
+
+// har skapat en function som skapara nya divar och lägger till en siffra mellan 0-99 i
+
+function createNumberDiv (){
+  let newDiv = document.createElement("div")
+  newDiv.innerHTML= Math.floor(99 * Math.random())
+  
+  newDiv.addEventListener("click",function(){
+    newDiv.classList.toggle("selected")
+    
+    updateResults("selected")
+  })
+  
+  return newDiv
+}
+
+
+document.querySelector("button").addEventListener("click", function(){
+  gridMaker(document.querySelector("#grid"), valueColumn, valueRow) 
+})
+
+
+function averg ( _array ) {
+  let sum2 = adder(a1) / _array.length;
+  return sum2;
+ // in here you must use adder
+}
+
+
 function getArrayOfSelectedNumbers (className) {
 
   // This weird line creates an array with all the numberDivs that have the 
@@ -60,12 +117,45 @@ function getArrayOfSelectedNumbers (className) {
     let number = parseInt(numberAsString);
     arrayNumbers.push(number);
   }
-
+  
   // Make the array of numbers available outside the function
   return arrayNumbers;
-
+  
 }
 
+
+
+
+function updateResults (className){
+  let result = getArrayOfSelectedNumbers(className)
+
+ 
+  
+  document.querySelector("#selected span").innerHTML = result ; 
+  document.querySelector("#amount span").innerHTML = result.length;
+  
+  
+  document.querySelector("#sum span").innerHTML = adder (result)
+  
+  document.querySelector("#average span").innerHTML = averg(result);
+  
+  return result
+}
+
+function adder (arrayNumbers) {
+  let summ = 0;
+  for (let i = 0 ; i < arrayNumbers.length ; i++){
+    summ = summ + arrayNumbers[i]
+  }
+  return summ;
+}
+
+
+function averg (arrayNumbers ) {
+  let sum2 = adder(arrayNumbers) / arrayNumbers.length;
+  return sum2;
+ // in here you must use adder
+}
 
 /*
 
@@ -82,6 +172,8 @@ But it is much easier in this case to simply create a new array with all
 the selected numbers each time the user selects or deselects a number.
 So, every time the user selects or deselects a number, we will call getArrayOfSelectedNumbers()
 to get an updated array of numbers.
+
+
 
 
 You must code a function updateResults that accepts parameter (className) and updates

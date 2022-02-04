@@ -1,0 +1,60 @@
+body{
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#controls{
+    display: flex;
+    justify-content: center;
+}
+
+#controls > div{
+    margin: 20px;
+}
+
+#results{
+    display: flex;
+    justify-content: center;
+}
+
+#results > div{
+    margin: 15px;
+}
+
+button{
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgb(136, 131, 102);
+    color: white;
+   
+}
+
+input{
+    padding: 20px;
+}
+
+#grid{
+    display: grid;
+    height: 100%;
+    gap: 5px;
+    background-color: rgb(177, 147, 108);
+}
+
+#grid > div{
+    font-size: 16pt;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.selected{
+    background-color: rgba(196, 168, 145, 0.596);
+    
+
+}
+
+

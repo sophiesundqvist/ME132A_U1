@@ -26,4 +26,5 @@ function createNumberDiv (){
 
 }
 
+
 document.querySelector("body").appendChild( createNumberDiv() )
