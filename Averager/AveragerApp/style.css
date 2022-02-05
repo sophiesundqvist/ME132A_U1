@@ -1,0 +1,82 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Abril Fatface', cursive;
+}
+
+button{
+    padding: 20px;
+    background-color: #8c9caa;
+    color: white;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px black;
+}
+
+#inputRows{
+    padding: 10px;
+    font-size: 12pt;
+    border-radius: 10px;
+}
+
+#inputCols{
+    padding: 10px;
+    font-size: 12pt;
+    border-radius: 10px;
+}
+
+
+#controls{
+    font-size: 16pt;
+    display: flex;
+    justify-content: center;
+    margin: 2vh;
+    flex-basis: 6vh;
+    align-items: center;
+}
+
+#results{
+    display: flex;
+    margin: 2vh;
+    justify-content: center;
+    font-size: 16pt;
+}
+
+#top{
+    background-color: #d8d2d5;
+}
+
+#top > div > div{
+    margin: 2vh;
+}
+
+#grid{
+    display: grid;
+    gap: 10px;
+    font-size: 17pt;
+    background-color: #424f5c;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+#grid > div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #8c9caa;
+    color: #d8d2d5;
+}
+
+#grid > div.selected{
+    background-color: #424f5c;
+    color: black;
+}
+
+#grid > div:hover{
+    box-shadow: 0 0 11px black;
+    cursor:pointer;
+}

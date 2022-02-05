@@ -85,14 +85,9 @@ document.querySelector("button").addEventListener("click", function(){
 })
 
 
-function averg ( _array ) {
-  let sum2 = adder(a1) / _array.length;
-  return sum2;
- // in here you must use adder
-}
 
 
-function getArrayOfSelectedNumbers (className) {
+function getArrayOfSelectedNumbers (className) { 
 
   // This weird line creates an array with all the numberDivs that have the 
   // class className. Naturally, when you call this function, you will need 
@@ -127,14 +122,13 @@ function updateResults (className){
   
   document.querySelector("#selected span").innerHTML = result ; 
   document.querySelector("#amount span").innerHTML = result.length;
-  
-  
   document.querySelector("#sum span").innerHTML = adder (result)
-  
   document.querySelector("#average span").innerHTML = averg(result);
   
   return result
 }
+
+
 
 function adder (arrayNumbers) {
   let summ = 0;
