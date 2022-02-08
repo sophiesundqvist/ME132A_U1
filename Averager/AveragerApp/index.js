@@ -51,6 +51,13 @@ function gridMaker (gridContainer, cols, rows) {
   }
 }
 
+
+function roundString (input, digits) {
+  var rounded = Math.pow(10, digits)
+  return (Math.round(input * rounded) / rounded).toFixed(digits)
+}
+
+
 function selectedAverage (arrayNumbers) {
   let sumAverage = selectedSum(arrayNumbers) / arrayNumbers.length
 
@@ -66,12 +73,6 @@ function selectedSum (arrayNumbers) {
   }
 
   return sum
-}
-
-
-function roundString (input, digits) {
-  var rounded = Math.pow(10, digits)
-  return (Math.round(input * rounded) / rounded).toFixed(digits)
 }
 
 
@@ -99,3 +100,5 @@ document.querySelector('button').addEventListener('click', function () {
 
 // DIRECT CODE
 // Initialise the page directly, no need to wait for user to click first time.
+
+document.querySelector('button').click()
